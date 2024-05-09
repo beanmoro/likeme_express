@@ -1,11 +1,11 @@
 import { pool } from "../database/connection.js";
 
 const all = async () => {
-  const queryString = `
+  const query = `
     SELECT * FROM posts 
     ORDER BY likes DESC
     `;
-  const { rows } = await pool.query(queryString);
+  const { rows } = await pool.query(query);
   return rows;
 };
 
@@ -39,7 +39,7 @@ const update = async (id) => {
 };
 
 export const Post = {
-  create,
+  all,
   create,
   update,
 };
